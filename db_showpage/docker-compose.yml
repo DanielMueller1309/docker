@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+    db:
+      image: mysql
+      command: --default-authentication-plugin=mysql_native_password
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: hallowelt
+    php:
+      image: php:7.4-apache
+      ports:
+        - 8069:80
+      volumes:
+          - ./db_showpage_vol/php/www/:/var/www/html/
+
