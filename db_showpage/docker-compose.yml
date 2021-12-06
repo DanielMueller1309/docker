@@ -12,7 +12,7 @@ services:
         MYSQL_USER: admin
       volumes:
           - ./mysql_docs/initial/:/docker-entrypoint-initdb.d/
-          - ./mysql_docs/ADASPACE.csv:/home/ADASPACE.csv
+          - ./mysql_docs/ADASPACE:/home/ADASPACE
     php:
       image: php:7.4-apache
       ports:
