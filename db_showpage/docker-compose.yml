@@ -10,6 +10,7 @@ services:
       restart: always
       environment:
         MYSQL_ROOT_PASSWORD: hallowelt
+        MYSQL_USER: admin
     php:
       image: php:7.4-apache
       ports:
