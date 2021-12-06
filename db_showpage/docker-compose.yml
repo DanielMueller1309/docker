@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+
+    db:
+      image: mysql
+      command: chown -R mysql:mysql /docker-entrypoint-initdb.d/
+      command: ['--default-authentication-plugin=mysql_native_password', '--skip-grant-tables', '--secure-file-priv=/docker-entrypoint-initdb.d/', '--local-infile=1']
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: hallowelt
+        MYSQL_USER: admin
+      volumes:
+          - ./mysql_docs/initial/:/docker-entrypoint-initdb.d/
+          - ./mysql_docs/ADASPACE.csv:/home/ADASPACE.csv
+    php:
+      image: php:7.4-apache
+      ports:
+        - 8069:80
+      volumes:
+          - ./db_showpage_vol/php/www/:/var/www/html/
+
