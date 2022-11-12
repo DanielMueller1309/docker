@@ -20,7 +20,7 @@ services:
 
   app:
     image: nextcloud:apache
-    build: ./dockerfile.yml
+    build: ./web
     pull_policy: build
     restart: always
     ports:
