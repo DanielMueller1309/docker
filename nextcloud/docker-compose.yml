@@ -20,6 +20,7 @@ services:
 
   app:
     build: ./dockerfile.yml
+    pull_policy: build
     restart: always
     ports:
       - 127.0.0.1:8080:80
