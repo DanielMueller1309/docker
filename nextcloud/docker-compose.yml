@@ -20,7 +20,7 @@ services:
 
   app:
     image: nextcloud:apache
-    build: ./nc
+    build: ./web
     pull_policy: build
     restart: always
     ports:
