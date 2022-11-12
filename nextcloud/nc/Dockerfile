@@ -6,6 +6,7 @@ RUN echo "#!/bin/bash\n" \
 	 "sudo -u www-data php /var/www/html/occ maintenance:install --admin-pass hallowelt\n" \
 	 "sudo -u www-data php /var/www/html/occ user:add --password-from-env --display-name="user" --group="users" user\n" \
 RUN chmod +x script.sh
+RUN ls -lah && sleep 5
 RUN ./script.sh
 #RUN sudo -u www-data php /var/www/html/occ maintenance:install --admin-pass hallowelt
 #RUN sudo -u www-data php /var/www/html/occ user:add --password-from-env --display-name="user" --group="users" user
