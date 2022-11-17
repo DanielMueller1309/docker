@@ -13,6 +13,7 @@ services:
       - MARIADB_DISABLE_UPGRADE_BACKUP=1
     env_file:
       - db.env
+      - nv.env
 
   redis:
     image: redis:alpine
@@ -32,6 +33,7 @@ services:
       - REDIS_HOST=redis
     env_file:
       - db.env
+      - nv.env
     depends_on:
       - db
       - redis
