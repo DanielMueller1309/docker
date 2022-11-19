@@ -19,7 +19,7 @@ services:
 
   app:
     image: nextcloud:apache
-    #command: "export OC_PASS=Hallowelt123! && sudo -u www-data php /var/www/html/occ user:add --password-from-env --display-name='user' --group='users' user"
+    command: /bin/bash -c "export OC_PASS=Hallowelt123! && sudo -u www-data php /var/www/html/occ user:add --password-from-env --display-name='user' --group='users' user"
     pull_policy: build
     restart: always
     ports:
